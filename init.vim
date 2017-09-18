@@ -54,6 +54,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('tpope/vim-rsi')
   call dein#add('tpope/vim-obsession')
   call dein#add('tpope/vim-sensible')
+  call dein#add('tpope/vim-projectionist')
 
   " syntax highlighting
   call dein#add('ekalinin/Dockerfile.vim')
@@ -87,6 +88,10 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
 
   " Linters
   call dein#add('neomake/neomake')
+
+  " misc
+  call dein#add('rhysd/clever-f.vim')
+  call dein#add('sheerun/vim-polyglot')
 
   " Required:
   call dein#end()
@@ -282,3 +287,6 @@ call denite#custom#map(
 \)
 
 set termguicolors
+
+" Neomake
+nmap <leader>m :Neomake<cr>
