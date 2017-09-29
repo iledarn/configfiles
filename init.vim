@@ -78,6 +78,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
 
   " SQL
   call dein#add('vim-scripts/SQLComplete.vim')
+  call dein#add('lifepillar/pgsql.vim')
   call dein#add('vim-scripts/dbext.vim')
 
   " Start window, recent files
@@ -92,6 +93,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " misc
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('pelodelfuego/vim-swoop')
 
   " Required:
   call dein#end()
@@ -290,3 +292,19 @@ set termguicolors
 
 " Neomake
 nmap <leader>m :Neomake<cr>
+
+" Projectionistk
+" let g:projectionist_heuristics = {
+"       \   "controllers/*.py": {"type": "controller"},
+"       \   "models/*.py": {"type": "model"},
+"       \   "views/*.py": {"type": "view"}
+"       \ }
+" autocmd User ProjectionistDetect
+"       \ call projectionist#append(getcwd(),
+"       \ {
+"       \   "controllers/*.py": {"type": "controller"},
+"       \   "models/*.py": {"type": "model"}
+"       \ }
+
+" SQL
+let g:sql_type_default = 'pgsql'
