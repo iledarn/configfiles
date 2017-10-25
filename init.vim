@@ -94,6 +94,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('pelodelfuego/vim-swoop')
+  call dein#add('skwp/greplace.vim')
 
   " Required:
   call dein#end()
@@ -308,3 +309,22 @@ nmap <leader>m :Neomake<cr>
 
 " SQL
 let g:sql_type_default = 'pgsql'
+
+function! RestoreRegister()
+    let @" = s:restore_reg
+    return ''
+endfunction
+
+function! PasteOver()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+
+vnoremap <silent> <expr>  zp PasteOver()
+nmap <silent> zp viwzp
+
+" greplace
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
