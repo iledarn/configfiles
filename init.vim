@@ -39,13 +39,14 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('jreybert/vimagit')
   call dein#add('sjl/splice.vim')
   call dein#add('airblade/vim-gitgutter')
+  " call dein#add('hrsh7th/vim-unite-vcs')
 
   call dein#add('Shougo/deoplete.nvim')
   " pip2 install jedi
   call dein#add('zchee/deoplete-jedi')
 
   " tpope
-  call dein#add('tpope/vim-sleuth')
+  " call dein#add('tpope/vim-sleuth')
   call dein#add('tpope/vim-unimpaired')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-commentary')
@@ -69,9 +70,10 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('sukima/xmledit')
   call dein#add('actionshrimp/vim-xpath')
 
-  " color
+  " color, syntax
   " call dein#add('sentientmachine/Pretty-Vim-Python')
   call dein#add('hdima/python-syntax')
+  call dein#add('hail2u/vim-css3-syntax')
 
   " trailing whitespace
   call dein#add('ntpeters/vim-better-whitespace')
@@ -209,7 +211,7 @@ let g:vimfiler_ignore_pattern = [
             \ '\%(^\.\|\.pyc$\)',
             \ '\.class$'
             \]
-let g:vimfiler_quick_look_command = 'gloobus-preview'
+" let g:vimfiler_quick_look_command = 'gloobus-preview'
 call vimfiler#custom#profile('default', 'context', {
             \ 'explorer' : 1,
             \ 'winwidth' : 30,
@@ -253,8 +255,8 @@ function! s:vimfilerinit()
     nnoremap <silent><buffer><expr> st  vimfiler#do_action('tabswitch')
     nmap <buffer> gx     <Plug>(vimfiler_execute_vimfiler_associated)
     nmap <buffer> '      <Plug>(vimfiler_toggle_mark_current_line)
-    nmap <buffer> v      <Plug>(vimfiler_quick_look)
-    nmap <buffer> p      <Plug>(vimfiler_preview_file)
+    " nmap <buffer> v      <Plug>(vimfiler_quick_look)
+    " nmap <buffer> p      <Plug>(vimfiler_preview_file)
     nmap <buffer> V      <Plug>(vimfiler_clear_mark_all_lines)
     nmap <buffer> i      <Plug>(vimfiler_switch_to_history_directory)
     nmap <buffer> <Tab>  <Plug>(vimfiler_switch_to_other_window)
@@ -328,3 +330,6 @@ set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+" let g:xml_syntax_folding=1
+" au FileType xml setlocal foldmethod=syntax
+au FileType xml :set sw=2 ts=2 et
