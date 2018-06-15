@@ -11,8 +11,8 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('/home/ildar/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('vim-airline/vim-airline')
 
@@ -26,6 +26,10 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
   call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('brooth/far.vim')
+  call dein#add('lambdalisue/gina.vim')
+  call dein#add('chemzqm/unite-location')
+  call dein#add('neoclide/denite-extra')
 
   " Shougo
   call dein#add('Shougo/unite.vim')
@@ -95,7 +99,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " misc
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
-  call dein#add('pelodelfuego/vim-swoop')
+  " call dein#add('pelodelfuego/vim-swoop')
   call dein#add('skwp/greplace.vim')
 
   " Required:
@@ -186,9 +190,14 @@ call denite#custom#map(
   \ '<denite:move_to_previous_line>',
   \ 'noremap'
 \)
-
 nmap <leader>* :Ag <c-r>=expand("<cword>")<cr><cr>
 nmap <leader>// :Ag<space>
+
+nnoremap <silent> <space>p  :<C-u>Denite -resume<CR>
+nnoremap <silent> <space>j  :call execute('Denite -resume -select=+'.v:count1.' -immediately')<CR>
+nnoremap <silent> <space>k  :call execute('Denite -resume -select=-'.v:count1.' -immediately')<CR>
+nnoremap <silent> <space>q  :<C-u>Denite -mode=normal -auto-resize quickfix<CR>
+nnoremap <silent> <space>l  :<C-u>Denite -mode=normal -auto-resize location_list<CR>
 
 
 " VimFiler
@@ -333,3 +342,7 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 " let g:xml_syntax_folding=1
 " au FileType xml setlocal foldmethod=syntax
 au FileType xml :set sw=2 ts=2 et
+au FileType javascript :set sw=4 ts=4 et
+
+" CSV
+let b:csv_arrange_align = 'l*'
