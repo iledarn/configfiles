@@ -122,9 +122,6 @@ endif
 " Copy from neovim to system clipboard
 set clipboard+=unnamedplus
 
-" display a bar instead of a block in insert mode
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
@@ -300,7 +297,7 @@ call denite#custom#map(
   \ 'noremap'
 \)
 
-set termguicolors
+" set termguicolors
 
 " Neomake
 nmap <leader>m :Neomake<cr>
