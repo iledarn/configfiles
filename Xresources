@@ -2,7 +2,8 @@
 URxvt*termName:                       rxvt-256color
 URxvt*:borderLess:                    true
 URxvt*cursorBlink:                    true
-URxvt*font: xft:Hack-regular:size=11
+URxvt*font: xft:Hack-regular:size=9
+URxvt.letterSpace: -1
 URxvt*jumpScroll:                     true
 
 URxvt*scrollBar:                      false
