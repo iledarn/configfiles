@@ -135,8 +135,9 @@ nmap <leader><Tab> :b#<cr>
 nmap <leader>w :w<cr>
 
 let g:gruvbox_italic=1
-colorscheme gruvbox
-set background=dark
+" colorscheme gruvbox
+" set background=dark
+colorscheme base16-gruvbox-dark-medium
 
 let g:airline_powerline_fonts = 1
 augroup Fix_airline_with_unite
