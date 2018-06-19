@@ -345,3 +345,20 @@ au FileType javascript :set sw=4 ts=4 et
 
 " CSV
 let b:csv_arrange_align = 'l*'
+
+" denite
+" Change ignore_globs
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [ '.git/', '.ropeproject/', '__pycache__/',
+      \ '*~', '*.o', '*.exe', '*.bak',
+      \ '.DS_Store', '*.pyc', '*.sw[po]', '*.class',
+      \ '.hg/', '.git/', '.bzr/', '.svn/',
+      \ 'tags', 'tags-*',
+      \ '*.po', '*.pot',
+      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
+
+" function! custom#VisualGrep(...) abort
+"     let l:options = get(a:000, 0, [])
+"     let l:args = [getcwd()] + l:options
+"     call denite#start([{'name': 'grep', 'args': l:args}], {'input': custom#VisualGet(), 'mode': 'normal'})
+" endfunction
