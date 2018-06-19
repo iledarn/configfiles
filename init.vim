@@ -76,8 +76,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('actionshrimp/vim-xpath')
 
   " color, syntax
-  " call dein#add('sentientmachine/Pretty-Vim-Python')
-  call dein#add('hdima/python-syntax')
+  call dein#add('vim-python/python-syntax')
   call dein#add('hail2u/vim-css3-syntax')
 
   " trailing whitespace
@@ -272,8 +271,8 @@ function! s:vimfilerinit()
 endf
 
 
-" call dein#add('hdima/python-syntax')
-let python_highlight_all = 1
+" vim-python/python-syntax
+let g:python_highlight_all = 1
 
 let base16colorspace=256
 
