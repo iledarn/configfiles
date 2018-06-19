@@ -35,6 +35,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/unite-outline')
   call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/vimfiler.vim')
 
   " GIT
