@@ -64,6 +64,8 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
 
   " syntax highlighting
   call dein#add('ekalinin/Dockerfile.vim')
+  " call dein#add('vim-scripts/nginx.vim')
+  " call dein#add('groenewege/vim-less')
 
   " working with csv
   call dein#add('chrisbra/csv.vim')
@@ -77,6 +79,8 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
 
   " color, syntax
   call dein#add('vim-python/python-syntax')
+  " call dein#add('tmhedberg/SimpylFold')
+  " call dein#add('Konfekt/FastFold')
   call dein#add('hail2u/vim-css3-syntax')
 
   " trailing whitespace
@@ -96,11 +100,15 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " Linters
   call dein#add('neomake/neomake')
 
+  " Movements
+  call dein#add('vim-scripts/python_match.vim')
+
   " misc
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
   " call dein#add('pelodelfuego/vim-swoop')
   call dein#add('skwp/greplace.vim')
+  call dein#add('maxbrunsfeld/vim-yankstack')
 
   " Required:
   call dein#end()
@@ -356,8 +364,14 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
       \ '*.po', '*.pot',
       \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
 
-" function! custom#VisualGrep(...) abort
-"     let l:options = get(a:000, 0, [])
-"     let l:args = [getcwd()] + l:options
-"     call denite#start([{'name': 'grep', 'args': l:args}], {'input': custom#VisualGet(), 'mode': 'normal'})
-" endfunction
+function! VisualGrep(...) abort
+    let l:options = get(a:000, 0, [])
+    let l:args = [getcwd()] + l:options
+    call denite#start([{'name': 'grep', 'args': l:args}], {'input': custom#VisualGet(), 'mode': 'normal'})
+endfunction
+
+call yankstack#setup()
+nmap Y y$
+
+" vim-scripts/nginx.vim
+" au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
