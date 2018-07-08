@@ -393,4 +393,4 @@ nmap Y y$
 
 " vim-scripts/nginx.vim
 " au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
-
+:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
