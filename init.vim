@@ -392,5 +392,10 @@ call yankstack#setup()
 nmap Y y$
 
 " vim-scripts/nginx.vim
-" au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
-:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/2
+augroup END
