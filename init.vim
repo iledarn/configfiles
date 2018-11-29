@@ -176,6 +176,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 set noshowmode
 
 nmap <leader>ff :Files<cr>
+nmap <leader>fd :Denite file/rec<cr>
 
 nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
 
