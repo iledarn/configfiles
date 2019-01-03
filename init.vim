@@ -381,6 +381,7 @@ au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 " let g:xml_syntax_folding=1
 " au FileType xml setlocal foldmethod=syntax
 au FileType xml :set sw=2 ts=2 et
+au FileType html :set sw=2 ts=2 et
 au FileType javascript :set sw=4 ts=4 et
 
 " CSV
