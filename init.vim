@@ -49,7 +49,20 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('Shougo/deoplete.nvim')
   " pip2 install jedi
   call dein#add('zchee/deoplete-jedi')
-
+  " javascript
+  call dein#add('carlitux/deoplete-ternjs')
+  call dein#add('ternjs/tern_for_vim')
+  call dein#add('pangloss/vim-javascript')
+  call dein#add('othree/yajs.vim')
+  call dein#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' })
+  " call dein#add('billyvg/tigris.nvim')
+  call dein#add('moll/vim-node')
+  call dein#add('vimlab/jscs.vim')
+  call dein#add('othree/javascript-libraries-syntax.vim')
+  call dein#add('othree/jspc.vim')
+  " call dein#add('vimlab/neojs')
+  " python
+  call dein#add('numirias/semshi')
   " tpope
   " call dein#add('tpope/vim-sleuth')
   call dein#add('tpope/vim-unimpaired')
@@ -61,6 +74,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('tpope/vim-obsession')
   call dein#add('tpope/vim-sensible')
   call dein#add('tpope/vim-projectionist')
+  call dein#add('tpope/vim-eunuch')
 
   " syntax highlighting
   call dein#add('ekalinin/Dockerfile.vim')
@@ -400,3 +414,36 @@ augroup VCenterCursor
   au BufEnter,WinEnter,WinNew,VimResized *,*.*
         \ let &scrolloff=winheight(win_getid())/2
 augroup END
+
+" trying set hidden - don't know yet for what it is
+" as it is occured - it allows to switch buffer without first saving the
+" changes
+" Required for operations modifying multiple buffers like rename.
+set hidden
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+    \ 'python': ['/usr/bin/pyls'],
+    \ }
+let g:LanguageClient_loggingLevel = 'DEBUG'
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" let g:tigris#enabled = 1
+" let g:tigris#debug = 1
+" let g:tigris#on_the_fly_enabled = 1
+" let g:tigris#delay = 500
+let g:jscs_config = "/home/ildar/.config/nvim/.jscsrc"
+" autocmd BufWritePre *.js :Format
+" let g:tern#command = ['tern']
+" let g:tern#arguments = ['--persistent']
+" let g:tern_map_keys=1
+let g:deoplete#sources#ternjs#filter = 0
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#sources#ternjs#docs = 1
