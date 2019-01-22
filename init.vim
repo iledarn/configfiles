@@ -125,6 +125,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " call dein#add('pelodelfuego/vim-swoop')
   call dein#add('skwp/greplace.vim')
   call dein#add('maxbrunsfeld/vim-yankstack')
+  call dein#add('lilydjwg/colorizer')
 
   " Required:
   call dein#end()
