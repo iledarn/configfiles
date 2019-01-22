@@ -62,7 +62,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('othree/jspc.vim')
   " call dein#add('vimlab/neojs')
   " python, this semshi seems contraversal
-  " call dein#add('numirias/semshi')
+  call dein#add('numirias/semshi')
   " html linting-fixing
   " call dein#add('w0rp/ale')
   " tpope
