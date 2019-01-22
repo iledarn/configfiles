@@ -457,4 +457,4 @@ let g:deoplete#sources#ternjs#docs = 1
 " \   'html': ['prettier'],
 " \}
 
-nmap <leader>ee :ALEFix<cr>
+" nmap <leader>ee :ALEFix<cr>
