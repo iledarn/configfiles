@@ -61,8 +61,10 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('othree/javascript-libraries-syntax.vim')
   call dein#add('othree/jspc.vim')
   " call dein#add('vimlab/neojs')
-  " python
-  call dein#add('numirias/semshi')
+  " python, this semshi seems contraversal
+  " call dein#add('numirias/semshi')
+  " html linting-fixing
+  " call dein#add('w0rp/ale')
   " tpope
   " call dein#add('tpope/vim-sleuth')
   call dein#add('tpope/vim-unimpaired')
@@ -92,7 +94,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('actionshrimp/vim-xpath')
 
   " color, syntax
-  call dein#add('vim-python/python-syntax')
+  " call dein#add('vim-python/python-syntax')
   " call dein#add('tmhedberg/SimpylFold')
   " call dein#add('Konfekt/FastFold')
   call dein#add('hail2u/vim-css3-syntax')
@@ -313,7 +315,7 @@ endf
 
 
 " vim-python/python-syntax
-let g:python_highlight_all = 1
+" let g:python_highlight_all = 1
 
 let base16colorspace=256
 
@@ -448,3 +450,10 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#sources#ternjs#docs = 1
+
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'html': ['prettier'],
+" \}
+
+nmap <leader>ee :ALEFix<cr>
