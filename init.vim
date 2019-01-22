@@ -127,6 +127,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('maxbrunsfeld/vim-yankstack')
   call dein#add('lilydjwg/colorizer')
   call dein#add('luochen1990/rainbow')
+  call dein#add('inside/vim-search-pulse')
 
   " Required:
   call dein#end()
