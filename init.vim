@@ -126,6 +126,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('skwp/greplace.vim')
   call dein#add('maxbrunsfeld/vim-yankstack')
   call dein#add('lilydjwg/colorizer')
+  call dein#add('luochen1990/rainbow')
 
   " Required:
   call dein#end()
@@ -458,3 +459,4 @@ let g:deoplete#sources#ternjs#docs = 1
 " \}
 
 " nmap <leader>ee :ALEFix<cr>
+let g:rainbow_active = 1
