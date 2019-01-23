@@ -54,7 +54,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('ternjs/tern_for_vim')
   call dein#add('pangloss/vim-javascript')
   call dein#add('othree/yajs.vim')
-  call dein#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' })
+  " call dein#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' })
   " call dein#add('billyvg/tigris.nvim')
   call dein#add('moll/vim-node')
   call dein#add('vimlab/jscs.vim')
@@ -383,6 +383,7 @@ set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
+au FileType python setlocal equalprg=black\ -\ 2>/dev/null " dont forget `pip3 install black`
 " let g:xml_syntax_folding=1
 " au FileType xml setlocal foldmethod=syntax
 au FileType xml :set sw=2 ts=2 et
@@ -426,18 +427,19 @@ augroup END
 " changes
 " Required for operations modifying multiple buffers like rename.
 set hidden
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
-    \ 'python': ['/usr/bin/pyls'],
-    \ }
-let g:LanguageClient_loggingLevel = 'DEBUG'
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" Or map each action separately
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+"     \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+"     \ 'python': ['/usr/bin/pyls'],
+"     \ }
+" let g:LanguageClient_loggingLevel = 'DEBUG'
+
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" " Or map each action separately
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " let g:tigris#enabled = 1
 " let g:tigris#debug = 1
