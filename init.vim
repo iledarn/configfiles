@@ -127,6 +127,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('maxbrunsfeld/vim-yankstack')
   call dein#add('lilydjwg/colorizer')
   call dein#add('luochen1990/rainbow')
+  call dein#add('t9md/vim-choosewin')
   " seems this is not compatible with anzu
   " call dein#add('inside/vim-search-pulse')
 
@@ -482,3 +483,5 @@ function MyCustomHighlights()
 	hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
 endfunction
 autocmd FileType python call MyCustomHighlights()
+" choosewin
+nmap  -  <Plug>(choosewin)
