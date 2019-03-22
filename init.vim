@@ -487,5 +487,5 @@ autocmd FileType python call MyCustomHighlights()
 nmap  -  <Plug>(choosewin)
 
 " "Zoom" a split window into a tab and/or close it
-nmap <Leader>,zo :tabnew %<CR>
-nmap <Leader>,zc :tabclose<CR><Paste>
+nmap <Leader>zo :tabnew %<CR>
+nmap <Leader>zc :tabclose<CR><Paste>
