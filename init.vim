@@ -86,6 +86,9 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " working with csv
   call dein#add('chrisbra/csv.vim')
 
+  " working with terraform
+  call dein#add('hashivim/vim-terraform')
+
   " search plugins
   call dein#add('osyo-manga/vim-anzu')
 
@@ -386,6 +389,7 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 au FileType python setlocal equalprg=black\ -\ 2>/dev/null " dont forget `pip3 install black`
+au FileType terraform setlocal equalprg=terraform\ fmt\ -\ 2>/dev/null " dont forget `pip3 install black`
 " let g:xml_syntax_folding=1
 " au FileType xml setlocal foldmethod=syntax
 au FileType xml :set sw=2 ts=2 et
@@ -489,3 +493,30 @@ nmap  -  <Plug>(choosewin)
 " "Zoom" a split window into a tab and/or close it
 nmap <Leader>zo :tabnew %<CR>
 nmap <Leader>zc :tabclose<CR><Paste>
+
+" https://vi.stackexchange.com/questions/5780/list-known-filetypes
+function! GetFiletypes()
+    " Get a list of all the runtime directories by taking the value of that
+    " option and splitting it using a comma as the separator.
+    let rtps = split(&runtimepath, ",")
+    " This will be the list of filetypes that the function returns
+    let filetypes = []
+
+    " Loop through each individual item in the list of runtime paths
+    for rtp in rtps
+        let syntax_dir = rtp . "/syntax"
+        " Check to see if there is a syntax directory in this runtimepath.
+        if (isdirectory(syntax_dir))
+            " Loop through each vimscript file in the syntax directory
+            for syntax_file in split(glob(syntax_dir . "/*.vim"), "\n")
+                " Add this file to the filetypes list with its everything
+                " except its name removed.
+                call add(filetypes, fnamemodify(syntax_file, ":t:r"))
+            endfor
+        endif
+    endfor
+
+    " This removes any duplicates and returns the resulting list.
+    " NOTE: This might not be the best way to do this, suggestions are welcome.
+    return uniq(sort(filetypes))
+endfunction
