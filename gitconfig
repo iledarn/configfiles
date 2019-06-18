@@ -1,0 +1,23 @@
+[user]
+	name = iledarn
+	email = iledarn@gmail.com
+[core]
+	excludesfile = /home/ildar/.gitignore_global
+[alias]
+co = checkout
+ci = commit
+st = status
+br = branch
+hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+type = cat-file -t
+dump = cat-file -p
+[merge]
+	; tool = splice
+	tool = gitmerge
+[mergetool "gitmerge"]
+	cmd = $HOME/bin/gitmerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	; cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+	; trustExitCode = true
+; [mergetool "splice"]
+; 	cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+; 	trustExitCode = true
