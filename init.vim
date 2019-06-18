@@ -389,7 +389,7 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 au FileType python setlocal equalprg=black\ -\ 2>/dev/null " dont forget `pip3 install black`
-au FileType terraform setlocal equalprg=terraform\ fmt\ -\ 2>/dev/null " dont forget `pip3 install black`
+au FileType terraform setlocal equalprg=terraform\ fmt\ -\ 2>/dev/null
 " let g:xml_syntax_folding=1
 " au FileType xml setlocal foldmethod=syntax
 au FileType xml :set sw=2 ts=2 et
