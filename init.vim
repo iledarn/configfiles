@@ -26,6 +26,7 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
   call dein#add('christoomey/vim-tmux-navigator')
+  call dein#add('roxma/vim-tmux-clipboard')
   call dein#add('brooth/far.vim')
   call dein#add('lambdalisue/gina.vim')
   call dein#add('chemzqm/unite-location')
