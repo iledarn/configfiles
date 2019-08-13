@@ -64,6 +64,8 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   " call dein#add('vimlab/neojs')
   " python, this semshi seems contraversal
   call dein#add('numirias/semshi')
+  " yaml
+  call dein#add('mrk21/yaml-vim')
   " html linting-fixing
   " call dein#add('w0rp/ale')
   " tpope
@@ -521,3 +523,7 @@ function! GetFiletypes()
     " NOTE: This might not be the best way to do this, suggestions are welcome.
     return uniq(sort(filetypes))
 endfunction
+
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
