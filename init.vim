@@ -66,6 +66,8 @@ if dein#load_state('/home/ildar/.config/nvim/dein/')
   call dein#add('numirias/semshi')
   " yaml
   call dein#add('mrk21/yaml-vim')
+  " indent guide
+  call dein#add('nathanaelkane/vim-indent-guides')
   " html linting-fixing
   " call dein#add('w0rp/ale')
   " tpope
@@ -527,3 +529,7 @@ endfunction
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" indent guide
+let g:indent_guides_enable_on_vim_startup = 1
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
