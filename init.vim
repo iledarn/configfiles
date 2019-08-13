@@ -530,6 +530,6 @@ endfunction
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " indent guide
-let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
