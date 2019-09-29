@@ -1,14 +1,14 @@
 "dein Scripts-----------------------------
 " Required:
-set runtimepath+=/home/ildar/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/ildar/.config/nvim/dein/')
-  call dein#begin('/home/ildar/.config/nvim/dein/')
+if dein#load_state('~/.config/nvim/dein/')
+  call dein#begin('~/.config/nvim/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/ildar/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   " call dein#add('Shougo/neosnippet.vim')
@@ -456,7 +456,7 @@ set hidden
 " let g:tigris#debug = 1
 " let g:tigris#on_the_fly_enabled = 1
 " let g:tigris#delay = 500
-let g:jscs_config = "/home/ildar/.config/nvim/.jscsrc"
+" let g:jscs_config = "~/.config/nvim/.jscsrc"
 " autocmd BufWritePre *.js :Format
 " let g:tern#command = ['tern']
 " let g:tern#arguments = ['--persistent']
