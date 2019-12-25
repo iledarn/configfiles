@@ -205,7 +205,6 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 set noshowmode
 
 nmap <leader>ff :Files<cr>
-nmap <leader>fd :Denite file/rec<cr>
 
 nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
 
@@ -230,29 +229,8 @@ nmap # <Plug>(anzu-sharp-with-echo)
 " clear status
 nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
 
-nmap <leader>b :Denite buffer<cr>
-" Change mappings.
-call denite#custom#map(
-  \ 'insert',
-  \ '<C-j>',
-  \ '<denite:move_to_next_line>',
-  \ 'noremap'
-\)
-call denite#custom#map(
-  \ 'insert',
-  \ '<C-k>',
-  \ '<denite:move_to_previous_line>',
-  \ 'noremap'
-\)
 nmap <leader>* :Ag <c-r>=expand("<cword>")<cr><cr>
 nmap <leader>// :Ag<space>
-
-nnoremap <silent> <space>p  :<C-u>Denite -resume<CR>
-nnoremap <silent> <space>j  :call execute('Denite -resume -select=+'.v:count1.' -immediately')<CR>
-nnoremap <silent> <space>k  :call execute('Denite -resume -select=-'.v:count1.' -immediately')<CR>
-nnoremap <silent> <space>q  :<C-u>Denite -mode=normal -auto-resize quickfix<CR>
-nnoremap <silent> <space>l  :<C-u>Denite -mode=normal -auto-resize location_list<CR>
-
 
 " VimFiler
 nmap <leader>\ :VimFiler<cr>
@@ -310,9 +288,6 @@ function! s:vimfilerinit()
     silent! nunmap <buffer> -
     silent! nunmap <buffer> s
 
-    nnoremap <silent><buffer> gr  :<C-u>Denite grep:<C-R>=<SID>selected()<CR> -buffer-name=grep<CR>
-    nnoremap <silent><buffer> gf  :<C-u>Denite file_rec:<C-R>=<SID>selected()<CR><CR>
-    nnoremap <silent><buffer> gd  :<C-u>call <SID>change_vim_current_dir()<CR>
     nnoremap <silent><buffer><expr> sg  vimfiler#do_action('vsplit')
     nnoremap <silent><buffer><expr> sv  vimfiler#do_action('split')
     nnoremap <silent><buffer><expr> st  vimfiler#do_action('tabswitch')
@@ -338,23 +313,6 @@ let g:startify_change_to_vcs_root = 1
 " Sayonara
 nmap <leader>bd :Sayonara!<cr>
 nmap <leader>bdd :Sayonara<cr>
-
-" Denite
-" Change mappings.
-call denite#custom#map(
-  \ 'insert',
-  \ '<C-j>',
-  \ '<denite:move_to_next_line>',
-  \ 'noremap'
-\)
-call denite#custom#map(
-  \ 'insert',
-  \ '<C-k>',
-  \ '<denite:move_to_previous_line>',
-  \ 'noremap'
-\)
-
-" set termguicolors
 
 " Neomake
 nmap <leader>m :Neomake<cr>
@@ -533,3 +491,15 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+endfunction
+nnoremap <silent> <space>r  :<C-u>Denite -resume<CR>
