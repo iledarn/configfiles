@@ -130,6 +130,7 @@ if dein#load_state('~/.config/nvim/dein/')
   " misc
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('MattesGroeger/vim-bookmarks')
   " call dein#add('pelodelfuego/vim-swoop')
   call dein#add('skwp/greplace.vim')
   call dein#add('maxbrunsfeld/vim-yankstack')
