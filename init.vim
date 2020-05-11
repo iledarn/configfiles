@@ -11,16 +11,10 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('~/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('vim-airline/vim-airline')
 
-  " call dein#add('altercation/vim-colors-solarized')
-  " call dein#add('morhetz/gruvbox')
-  call dein#add('jnurmine/Zenburn')
-  call dein#add('tomasr/molokai')
-  call dein#add('chriskempson/base16-vim')
+  call dein#add('NLKNguyen/papercolor-theme')
   call dein#add('vim-airline/vim-airline-themes')
 
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -176,11 +170,8 @@ nmap <leader><Tab> :b#<cr>
 
 nmap <leader>w :w<cr>
 
-" let g:gruvbox_italic=1
-" colorscheme gruvbox
-" set background=dark
-" " colorscheme base16-gruvbox-dark-medium
-colors zenburn
+set background=light
+colorscheme PaperColor
 
 let g:airline_powerline_fonts = 1
 augroup Fix_airline_with_unite
