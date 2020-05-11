@@ -16,8 +16,9 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('vim-airline/vim-airline')
 
-  call dein#add('altercation/vim-colors-solarized')
-  call dein#add('morhetz/gruvbox')
+  " call dein#add('altercation/vim-colors-solarized')
+  " call dein#add('morhetz/gruvbox')
+  call dein#add('jnurmine/Zenburn')
   call dein#add('tomasr/molokai')
   call dein#add('chriskempson/base16-vim')
   call dein#add('vim-airline/vim-airline-themes')
@@ -175,10 +176,11 @@ nmap <leader><Tab> :b#<cr>
 
 nmap <leader>w :w<cr>
 
-let g:gruvbox_italic=1
-colorscheme gruvbox
-set background=dark
-" colorscheme base16-gruvbox-dark-medium
+" let g:gruvbox_italic=1
+" colorscheme gruvbox
+" set background=dark
+" " colorscheme base16-gruvbox-dark-medium
+colors zenburn
 
 let g:airline_powerline_fonts = 1
 augroup Fix_airline_with_unite
@@ -210,7 +212,7 @@ set noshowmode
 
 nmap <leader>ff :Files<cr>
 
-nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
+" nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
 
 if executable("ag") && ('' == $FZF_DEFAULT_COMMAND)
   let $FZF_DEFAULT_COMMAND = "ag --follow --nocolor --nogroup -g ''"
@@ -640,7 +642,7 @@ nnoremap <silent> <space>r  :<C-u>Denite -resume<CR>
 " " Show commands.
 " nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " " Find symbol of current document.
-" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " " Search workspace symbols.
 " nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " " Do default action for next item.
@@ -649,5 +651,9 @@ nnoremap <silent> <space>r  :<C-u>Denite -resume<CR>
 " nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " " Resume latest coc list.
 " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
