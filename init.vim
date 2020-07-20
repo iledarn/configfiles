@@ -15,6 +15,7 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('vim-airline/vim-airline')
 
   call dein#add('NLKNguyen/papercolor-theme')
+  call dein#add('morhetz/gruvbox')
   call dein#add('vim-airline/vim-airline-themes')
 
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -171,7 +172,8 @@ nmap <leader><Tab> :b#<cr>
 nmap <leader>w :w<cr>
 
 set background=light
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme gruvbox
 
 let g:airline_powerline_fonts = 1
 augroup Fix_airline_with_unite
