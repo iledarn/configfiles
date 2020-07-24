@@ -205,7 +205,7 @@ set noshowmode
 
 nmap <leader>ff :Files<cr>
 
-" nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nmap <leader>o :Unite -no-split -buffer-name=outline -start-insert outline<cr>
 
 if executable("ag") && ('' == $FZF_DEFAULT_COMMAND)
   let $FZF_DEFAULT_COMMAND = "ag --follow --nocolor --nogroup -g ''"
@@ -635,7 +635,7 @@ nnoremap <silent> <space>r  :<C-u>Denite -resume<CR>
 " " Show commands.
 " nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " " Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " " Search workspace symbols.
 " nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " " Do default action for next item.
