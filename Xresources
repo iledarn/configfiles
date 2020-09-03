@@ -12,6 +12,7 @@ URxvt*scrollTtyKeypress:              true
 URxvt*urgentOnBell:                   true
 URxvt*visualBell:                     false
 Urxvt.perl-ext-common: font-size
+URxvt*cursorColor:    #FF0000
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
