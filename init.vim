@@ -529,3 +529,4 @@ let g:coc_global_extensions = [
       \]
 
 nmap <leader>e :CocCommand explorer<cr>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
