@@ -2,7 +2,10 @@
 URxvt*termName:                       rxvt-256color
 URxvt*:borderLess:                    true
 URxvt*cursorBlink:                    true
-URxvt*font: xft:Hack-regular:size=9
+!URxvt*font: xft:Hack-regular:size=9
+!URxvt.font: xft.InconsolataNerdFontCompleteMono:size=9
+!URxvt.font: xft.Bitstream:size=9
+URxvt.font: xft:Hack Nerd Font Mono:size=9
 URxvt.letterSpace: -1
 URxvt*jumpScroll:                     true
 
