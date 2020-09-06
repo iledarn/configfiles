@@ -527,3 +527,5 @@ let g:coc_global_extensions = [
       \'coc-json',
       \'coc-git'
       \]
+
+nmap <leader>e :CocCommand explorer<cr>
