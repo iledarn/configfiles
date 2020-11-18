@@ -540,3 +540,5 @@ let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
 
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>F  <Plug>(coc-format)
+nmap <leader>F  <Plug>(coc-format)
