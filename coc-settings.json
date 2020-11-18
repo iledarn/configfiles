@@ -1,4 +1,5 @@
 // coc-settings.json
 {
-  "explorer.icon.enableNerdfont": true
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false
 } // coc-settings.json

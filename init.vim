@@ -86,6 +86,7 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('ekalinin/Dockerfile.vim')
   " call dein#add('vim-scripts/nginx.vim')
   " call dein#add('groenewege/vim-less')
+  call dein#add('Glench/Vim-Jinja2-Syntax')
 
   " working with csv
   call dein#add('chrisbra/csv.vim')
@@ -127,6 +128,7 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('vim-scripts/python_match.vim')
 
   " misc
+  call dein#add('szw/vim-maximizer')
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('MattesGroeger/vim-bookmarks')
@@ -533,3 +535,8 @@ let g:coc_global_extensions = [
 
 nmap <leader>e :CocCommand explorer<cr>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
