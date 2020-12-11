@@ -144,6 +144,10 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('jceb/vim-orgmode')
   " call dein#add('dhruvasagar/vim-dotoo')
 
+  " for django
+  call dein#add('Glench/Vim-Jinja2-Syntax')
+  call dein#add('tweekmonster/django-plus.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -542,3 +546,6 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 xmap <leader>F  <Plug>(coc-format)
 nmap <leader>F  <Plug>(coc-format)
+
+" for django
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
