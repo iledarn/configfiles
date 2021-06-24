@@ -560,3 +560,5 @@ let g:ale_fixers = { 'elixir': ['mix_format'] }
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
