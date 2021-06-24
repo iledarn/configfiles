@@ -86,7 +86,6 @@ if dein#load_state('~/.config/nvim/dein/')
   call dein#add('ekalinin/Dockerfile.vim')
   " call dein#add('vim-scripts/nginx.vim')
   " call dein#add('groenewege/vim-less')
-  call dein#add('Glench/Vim-Jinja2-Syntax')
 
   " working with csv
   call dein#add('chrisbra/csv.vim')
@@ -147,6 +146,9 @@ if dein#load_state('~/.config/nvim/dein/')
   " for django
   call dein#add('Glench/Vim-Jinja2-Syntax')
   call dein#add('tweekmonster/django-plus.vim')
+
+  " for formatting in elixir
+  call dein#add('dense-analysis/ale')
 
   " Required:
   call dein#end()
@@ -549,3 +551,12 @@ nmap <leader>F  <Plug>(coc-format)
 
 " for django
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
+
+" vim-maximizer
+nmap <leader>z :MaximizerToggle<CR>
+
+" formatting in elixir
+let g:ale_fixers = { 'elixir': ['mix_format'] }
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)

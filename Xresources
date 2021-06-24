@@ -1,5 +1,5 @@
 !---- URxvt - General settings {
-URxvt*termName:                       rxvt-256color
+URxvt*termName:                       screen-256color
 URxvt*:borderLess:                    true
 URxvt*cursorBlink:                    true
 !URxvt*font: xft:Hack-regular:size=9
