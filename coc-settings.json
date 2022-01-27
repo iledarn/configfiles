@@ -2,8 +2,8 @@
 {
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "python.linting.pylintEnabled": true,
-  "python.linting.flake8Enabled": true,
+  /* "python.linting.pylintEnabled": true, */
+  /* "python.linting.flake8Enabled": true, */
   "yaml.format.enable": true,
   "yaml.completion": true,
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh"

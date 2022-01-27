@@ -16,6 +16,7 @@ if dein#load_state('~/.config/nvim/dein/')
 
   call dein#add('NLKNguyen/papercolor-theme')
   call dein#add('morhetz/gruvbox')
+  call dein#add('dracula/vim')
   call dein#add('vim-airline/vim-airline-themes')
 
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -46,17 +47,17 @@ if dein#load_state('~/.config/nvim/dein/')
   " call dein#add('Shougo/deoplete.nvim')
   " " pip2 install jedi
   " call dein#add('zchee/deoplete-jedi')
-  " " javascript
+  " " javascript - I think I don't need this anymore as I have coc-tsserver
   " call dein#add('carlitux/deoplete-ternjs')
-  call dein#add('ternjs/tern_for_vim')
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('othree/yajs.vim')
+  " call dein#add('ternjs/tern_for_vim')
+  " call dein#add('pangloss/vim-javascript')
+  " call dein#add('othree/yajs.vim')
   " call dein#add('autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' })
   " call dein#add('billyvg/tigris.nvim')
-  call dein#add('moll/vim-node')
-  call dein#add('vimlab/jscs.vim')
-  call dein#add('othree/javascript-libraries-syntax.vim')
-  call dein#add('othree/jspc.vim')
+  " call dein#add('moll/vim-node')
+  " call dein#add('vimlab/jscs.vim')
+  " call dein#add('othree/javascript-libraries-syntax.vim')
+  " call dein#add('othree/jspc.vim')
   " call dein#add('vimlab/neojs')
   " python, this semshi seems contraversal
   call dein#add('numirias/semshi')
@@ -128,6 +129,7 @@ if dein#load_state('~/.config/nvim/dein/')
 
   " misc
   call dein#add('szw/vim-maximizer')
+  call dein#add('puremourning/vimspector')
   call dein#add('rhysd/clever-f.vim')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('MattesGroeger/vim-bookmarks')
@@ -182,6 +184,7 @@ nmap <leader><Tab> :b#<cr>
 nmap <leader>b :Buffers<cr>
 
 nmap <leader>w :w<cr>
+nmap <leader>fs :w<cr>
 
 set background=dark
 " colorscheme PaperColor
@@ -499,6 +502,7 @@ endfunction
 " add yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType js setlocal ts=2 sts=2 sw=2
 " indent guide
 " let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  ctermbg=black
@@ -533,7 +537,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
       \'coc-highlight',
-      \'coc-python',
       \'coc-explorer',
       \'coc-json',
       \'coc-git'
@@ -541,8 +544,8 @@ let g:coc_global_extensions = [
 
 nmap <leader>e :CocCommand explorer<cr>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
-let g:python_host_prog = '~/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '~/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '~/.pyenv/versions/neo2/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/neo3/bin/python'
 
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
@@ -562,3 +565,5 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
+
+let g:vimspector_enable_mappings = 'HUMAN'
