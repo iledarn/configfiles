@@ -329,7 +329,7 @@ nmap <leader>bd :Sayonara!<cr>
 nmap <leader>bdd :Sayonara<cr>
 
 " Neomake
-nmap <leader>m :Neomake<cr>
+nmap <leader>m :MaximizerToggle<cr>
 
 " Projectionistk
 " let g:projectionist_heuristics = {
