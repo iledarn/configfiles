@@ -1,7 +1,7 @@
 window:
-  decorations: none
-  startup_mode: Fullscreen
-  # startup_mode: Maximized
+  # decorations: none
+    # startup_mode: Fullscreen
+  startup_mode: Maximized
 font:
   normal:
     family: "Hack"
@@ -36,8 +36,8 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0xf3f3f3'
-    cursor: '0x4d4d4c'
+    text: '0x002b36'
+    cursor: '0x93a1a1'
 
   # Normal colors
   normal:
