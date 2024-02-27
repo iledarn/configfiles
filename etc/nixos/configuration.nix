@@ -105,6 +105,10 @@
       emacs
       git
       neovim
+      keepassxc
+      maestral
+      rofi
+      surfraw
     ];
     programs.bash.enable = true;
 
@@ -127,16 +131,17 @@
         };
 	"org/gnome/desktop/wm/preferences".num-workspaces = 9;
 	"org/gnome/shell/app-switcher".current-workspace-only = true;
+	"org/gnome/shell".disable-user-extensions = true;
 	"org/gnome/desktop/wm/keybindings" = {
 	  switch-to-workspace-1 = ["<Shift><Alt>1" "<Shift><Alt>x"];
 	  switch-to-workspace-2 = ["<Shift><Alt>2" "<Shift><Alt>d"];
 	  switch-to-workspace-3 = ["<Shift><Alt>3" "<Shift><Alt>f"];
 	  switch-to-workspace-4 = ["<Shift><Alt>4"];
-	  switch-to-workspace-5 = ["<Shift><Alt>5"];
+	  switch-to-workspace-5 = ["<Shift><Alt>5" "<Shift><Alt>t"];
 	  switch-to-workspace-6 = ["<Shift><Alt>6"];
 	  switch-to-workspace-7 = ["<Shift><Alt>7"];
 	  switch-to-workspace-8 = ["<Shift><Alt>8"];
-	  switch-to-workspace-9 = ["<Shift><Alt>9"];
+	  switch-to-workspace-9 = ["<Shift><Alt>9" "<Shift><Alt>k"];
 	  move-to-workspace-1 = ["<Ctrl><Alt>1"];
 	  move-to-workspace-2 = ["<Ctrl><Alt>2"];
 	  move-to-workspace-3 = ["<Ctrl><Alt>3"];
