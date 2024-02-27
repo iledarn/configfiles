@@ -109,6 +109,8 @@
       maestral
       rofi
       surfraw
+      jq
+      fzf
     ];
     programs.bash.enable = true;
 
@@ -121,10 +123,10 @@
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
           ];
         };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-          binding = "<Shift><Alt>f";
-          command = "wmctrl -a brave";
-          name = "brave";
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+          binding = "<Shift><Alt>r";
+          command = "rofi -show run -display-run 'run: '";
+          name = "rofi launcher";
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = [ "terminalte:ctrl_alt_bksp" "lv4:ralt_switch" "ctrl:nocaps" "grp:shifts_toggle" ];
