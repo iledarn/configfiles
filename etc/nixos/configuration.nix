@@ -111,6 +111,7 @@
       surfraw
       jq
       fzf
+      nerdfonts
     ];
     programs.bash.enable = true;
 
