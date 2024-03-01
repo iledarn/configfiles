@@ -119,6 +119,7 @@
       fzf
       nerdfonts
       microsoft-edge
+      enlightenment.terminology
     ];
     programs.bash.enable = true;
     
