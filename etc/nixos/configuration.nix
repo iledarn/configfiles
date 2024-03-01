@@ -113,6 +113,8 @@
       nerdfonts
     ];
     programs.bash.enable = true;
+    
+    services.emacs.enable = true;
 
     dconf = {
       enable = true;
@@ -122,6 +124,7 @@
           custom-kyebindings = [
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
           ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -133,6 +136,11 @@
           binding = "<Shift><Alt>d";
           command = "bash /home/ildar/configfiles/launchtool.sh brave";
           name = "brave";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+          binding = "<Shift><Alt>e";
+          command = "emacsclient -e \"(emacs-counsel-launcher)\"";
+          name = "emacs-run-launcher";
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = [ "terminalte:ctrl_alt_bksp" "lv4:ralt_switch" "ctrl:nocaps" "grp:shifts_toggle" ];
@@ -160,6 +168,7 @@
 	  move-to-workspace-8 = ["<Ctrl><Alt>8"];
 	  move-to-workspace-9 = ["<Ctrl><Alt>9"];
 	};
+	"org/gnome/mutter".workspaces-only-on-primary = true;
       };
     };
 
