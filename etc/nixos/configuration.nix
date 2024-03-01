@@ -93,6 +93,13 @@
   };
 
   home-manager.users.ildar = { pkgs, ... }: {
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+	allowUnfreePredicate = _: true;
+      };
+    };
+
     home.packages = with pkgs; [
       atool
       httpie
@@ -111,6 +118,7 @@
       jq
       fzf
       nerdfonts
+      microsoft-edge
     ];
     programs.bash.enable = true;
     
