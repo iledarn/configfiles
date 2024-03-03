@@ -120,6 +120,7 @@
       nerdfonts
       microsoft-edge
       enlightenment.terminology
+      foot
     ];
     programs.bash.enable = true;
     
@@ -147,8 +148,8 @@
           name = "brave";
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-          binding = "<Shift><Alt>e";
-          command = "emacsclient -e \"(emacs-counsel-launcher)\"";
+          binding = "<Shift><Alt>w";
+          command = "emacsclient -cF \"((visibility . nil))\" -e \"(emacs-counsel-launcher)\"";
           name = "emacs-run-launcher";
         };
         "org/gnome/desktop/input-sources" = {
