@@ -121,8 +121,29 @@
       microsoft-edge
       enlightenment.terminology
       foot
+      xsel
     ];
     programs.bash.enable = true;
+
+    programs.tmux = {
+      enable = true;
+      terminal = "tmux-256color";
+      historyLimit = 100000;
+      plugins = with pkgs;
+        [
+	  tmuxPlugins.yank
+	  tmuxPlugins.vim-tmux-navigator
+	  tmuxPlugins.sensible
+	  tmuxPlugins.pain-control
+	];
+	extraConfig = ''
+          setw -g mode-keys vi
+          unbind C-b
+          set -g prefix C-a
+          bind C-a send-prefix
+          bind-key C-a last-window
+	'';
+    };
     
     services.emacs.enable = true;
 
