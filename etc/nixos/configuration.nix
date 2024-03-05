@@ -126,6 +126,7 @@
       foot
       xsel
       docker-compose
+      gnupg
     ];
     programs.bash.enable = true;
 
@@ -150,6 +151,9 @@
     };
     
     services.emacs.enable = true;
+
+    programs.gpg.enable = true;
+    services.gpg-agent.enable = true;
 
     dconf = {
       enable = true;
