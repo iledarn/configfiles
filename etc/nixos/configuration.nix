@@ -127,6 +127,8 @@
       xsel
       docker-compose
       gnupg
+      sops
+      mc
     ];
     programs.bash.enable = true;
 
@@ -225,6 +227,15 @@
     home.sessionPath = [
       "/home/ildar/.config/emacs/bin"
     ];
+
+    programs.ssh.enable = true;
+    programs.ssh.matchBlocks = {
+      kepiProd = {
+        hostname = "139.162.11.95";
+	user = "prod";
+	identityFile = "/home/ildar/.ssh/id_ed25519";
+      };
+    };
             
     # The state version is required and should stay at the version you
     # originally installed.
