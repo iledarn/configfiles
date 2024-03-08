@@ -141,6 +141,8 @@
 	  tmuxPlugins.yank
 	  tmuxPlugins.vim-tmux-navigator
 	  tmuxPlugins.sensible
+	  tmuxPlugins.sessionist
+	  tmuxPlugins.resurrect
 	  tmuxPlugins.pain-control
 	];
 	extraConfig = ''
