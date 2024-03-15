@@ -114,7 +114,7 @@
       htop
       emacs
       git
-      neovim
+#      neovim
       keepassxc
       maestral
       surfraw
@@ -226,6 +226,10 @@
       };
     };
 
+    programs.neovim = {
+      enable = true;
+    };
+
     home.sessionPath = [
       "/home/ildar/.config/emacs/bin"
     ];
@@ -238,7 +242,7 @@
 	identityFile = "/home/ildar/.ssh/id_ed25519";
       };
     };
-            
+
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "23.11";
