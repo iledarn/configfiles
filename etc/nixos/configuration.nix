@@ -129,6 +129,7 @@
       gnupg
       sops
       mc
+      libreoffice
     ];
     programs.bash.enable = true;
 
@@ -228,6 +229,19 @@
 
     programs.neovim = {
       enable = true;
+      defaultEditor = true;
+      plugins = with pkgs.vimPlugins; [
+        fugitive
+        oil-nvim
+	nvim-treesitter.withAllGrammars
+	plenary-nvim
+	gruvbox-material
+	mini-nvim
+	nvim-tree-lua
+      ];
+      extraConfig = ''
+        colorscheme gruvbox-material
+      '';
     };
 
     home.sessionPath = [
