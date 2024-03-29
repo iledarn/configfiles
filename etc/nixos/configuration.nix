@@ -130,6 +130,8 @@
       sops
       mc
       libreoffice
+      feh
+      teams-for-linux
     ];
     programs.bash.enable = true;
 
@@ -232,15 +234,34 @@
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
         fugitive
-        oil-nvim
+        {
+	  plugin = oil-nvim;
+	  type = "lua";
+	  config = ''
+	    require('oil').setup()
+	  '';
+	}
 	nvim-treesitter.withAllGrammars
 	plenary-nvim
 	gruvbox-material
 	mini-nvim
-	nvim-tree-lua
+	{
+	  plugin = nvim-tree-lua;
+	  type = "lua";
+	  config = ''
+	    require('nvim-tree').setup()
+            vim.api.nvim_set_keymap('n', '<leader>\\', [[<cmd>NvimTreeToggle<CR>]], { })
+	    vim.api.nvim_set_keymap('n', '<leader>\\\\', [[<cmd>NvimTreeFindFile<CR>]], { })
+	  '';
+	}
       ];
       extraConfig = ''
         colorscheme gruvbox-material
+      '';
+      extraLuaConfig = ''
+	--Remap space as leader key
+        vim.g.mapleader = ' '
+        vim.g.maplocalleader = ','
       '';
     };
 
