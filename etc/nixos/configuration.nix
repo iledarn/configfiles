@@ -137,6 +137,7 @@
       feh
       teams-for-linux
       dconf2nix
+      dropbox
     ];
     programs.bash.enable = true;
 
@@ -193,6 +194,8 @@
 	nvim-treesitter.withAllGrammars
 	plenary-nvim
 	gruvbox-material
+	vim-code-dark
+	papercolor-theme
 	mini-nvim
 	{
 	  plugin = nvim-tree-lua;
@@ -203,9 +206,12 @@
 	    vim.api.nvim_set_keymap('n', '<leader>\\\\', [[<cmd>NvimTreeFindFile<CR>]], { })
 	  '';
 	}
+	vim-tmux-navigator
+	vim-tmux-clipboard
+	vim-unimpaired
       ];
       extraConfig = ''
-        colorscheme gruvbox-material
+        colorscheme PaperColor
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
@@ -230,6 +236,16 @@
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "23.11";
+
+    programs.foot = {
+      enable = true;
+      settings = {
+        main = {
+	  font = "Hack Nerd Font Mono";
+	  dpi-aware = "yes";
+	};
+      };
+    };
   };
 
   # Allow unfree packages
