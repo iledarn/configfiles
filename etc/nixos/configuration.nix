@@ -132,6 +132,7 @@
       libreoffice
       feh
       teams-for-linux
+      dconf2nix
     ];
     programs.bash.enable = true;
 
@@ -167,10 +168,11 @@
       settings = {
         "org/gnome/desktop/interface".color-scheme = "prefer-light";
         "org/gnome/settings-daemon/plugins/media-keys" = {
-          custom-kyebindings = [
+          custom-keybindings = [
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
             "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
           ];
         };
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -187,6 +189,11 @@
           binding = "<Shift><Alt>w";
           command = "emacsclient -cF \"((visibility . nil))\" -e \"(emacs-counsel-launcher)\"";
           name = "emacs-run-launcher";
+        };
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+          binding = "<Shift><Alt>e";
+          command = "bash /home/ildar/configfiles/launchtool.sh microsoft-edge";
+          name = "microsoft-edge";
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = [ "terminalte:ctrl_alt_bksp" "lv4:ralt_switch" "ctrl:nocaps" "grp:shifts_toggle" ];
