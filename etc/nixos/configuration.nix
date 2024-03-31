@@ -103,6 +103,10 @@
       };
     };
 
+    imports = [
+      ./dconf.nix
+    ];
+
     home.packages = with pkgs; [
       atool
       httpie
@@ -162,70 +166,6 @@
 
     programs.gpg.enable = true;
     services.gpg-agent.enable = true;
-
-    dconf = {
-      enable = true;
-      settings = {
-        "org/gnome/desktop/interface".color-scheme = "prefer-light";
-        "org/gnome/settings-daemon/plugins/media-keys" = {
-          custom-keybindings = [
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
-            "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
-          ];
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-          binding = "<Shift><Alt>c";
-          command = "bash /home/ildar/configfiles/launchtool.sh emacs";
-          name = "emacs";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-          binding = "<Shift><Alt>d";
-          command = "bash /home/ildar/configfiles/launchtool.sh brave";
-          name = "brave";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-          binding = "<Shift><Alt>w";
-          command = "emacsclient -cF \"((visibility . nil))\" -e \"(emacs-counsel-launcher)\"";
-          name = "emacs-run-launcher";
-        };
-        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-          binding = "<Shift><Alt>e";
-          command = "bash /home/ildar/configfiles/launchtool.sh microsoft-edge";
-          name = "microsoft-edge";
-        };
-        "org/gnome/desktop/input-sources" = {
-          xkb-options = [ "terminalte:ctrl_alt_bksp" "lv4:ralt_switch" "ctrl:nocaps" "grp:shifts_toggle" ];
-	  sources = with lib.hm.gvariant; [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
-	  mru-sources = with lib.hm.gvariant; [ (mkTuple [ "xkb" "en" ]) ];
-        };
-	"org/gnome/desktop/wm/preferences".num-workspaces = 9;
-	"org/gnome/shell/app-switcher".current-workspace-only = false;
-	"org/gnome/shell".disable-user-extensions = true;
-	"org/gnome/desktop/wm/keybindings" = {
-	  switch-to-workspace-1 = ["<Shift><Alt>1" "<Shift><Alt>x"];
-	  switch-to-workspace-2 = ["<Shift><Alt>2"];
-	  switch-to-workspace-3 = ["<Shift><Alt>3" "<Shift><Alt>f"];
-	  switch-to-workspace-4 = ["<Shift><Alt>4"];
-	  switch-to-workspace-5 = ["<Shift><Alt>5" "<Shift><Alt>t"];
-	  switch-to-workspace-6 = ["<Shift><Alt>6"];
-	  switch-to-workspace-7 = ["<Shift><Alt>7"];
-	  switch-to-workspace-8 = ["<Shift><Alt>8"];
-	  switch-to-workspace-9 = ["<Shift><Alt>9" "<Shift><Alt>k"];
-	  move-to-workspace-1 = ["<Ctrl><Alt>1"];
-	  move-to-workspace-2 = ["<Ctrl><Alt>2"];
-	  move-to-workspace-3 = ["<Ctrl><Alt>3"];
-	  move-to-workspace-4 = ["<Ctrl><Alt>4"];
-	  move-to-workspace-5 = ["<Ctrl><Alt>5"];
-	  move-to-workspace-6 = ["<Ctrl><Alt>6"];
-	  move-to-workspace-7 = ["<Ctrl><Alt>7"];
-	  move-to-workspace-8 = ["<Ctrl><Alt>8"];
-	  move-to-workspace-9 = ["<Ctrl><Alt>9"];
-	};
-	"org/gnome/mutter".workspaces-only-on-primary = true;
-      };
-    };
 
     programs.git = {
       enable = true;
