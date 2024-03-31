@@ -95,7 +95,7 @@
     ];
   };
 
-  home-manager.users.ildar = { pkgs, ... }: {
+  home-manager.users.ildar = { pkgs, lib, ... }: {
     nixpkgs = {
       config = {
         allowUnfree = true;
@@ -190,6 +190,8 @@
         };
         "org/gnome/desktop/input-sources" = {
           xkb-options = [ "terminalte:ctrl_alt_bksp" "lv4:ralt_switch" "ctrl:nocaps" "grp:shifts_toggle" ];
+	  sources = with lib.hm.gvariant; [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
+	  mru-sources = with lib.hm.gvariant; [ (mkTuple [ "xkb" "en" ]) ];
         };
 	"org/gnome/desktop/wm/preferences".num-workspaces = 9;
 	"org/gnome/shell/app-switcher".current-workspace-only = false;
