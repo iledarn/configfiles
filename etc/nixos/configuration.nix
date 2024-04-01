@@ -128,7 +128,8 @@
       microsoft-edge
       enlightenment.terminology
       foot
-      xsel
+#      xsel
+      wl-clipboard
       docker-compose
       gnupg
       sops
@@ -161,6 +162,7 @@
           set -g prefix C-a
           bind C-a send-prefix
           bind-key C-a last-window
+	  set-option -sa terminal-features ',foot:RGB'
 	'';
     };
     
