@@ -197,6 +197,7 @@
 	vim-code-dark
 	papercolor-theme
 	mini-nvim
+	nvim-web-devicons
 	{
 	  plugin = nvim-tree-lua;
 	  type = "lua";
@@ -209,6 +210,9 @@
 	vim-tmux-navigator
 	vim-tmux-clipboard
 	vim-unimpaired
+	vim-dadbod
+	vim-dadbod-ui
+	vim-dadbod-completion
       ];
       extraConfig = ''
         colorscheme PaperColor
