@@ -153,6 +153,7 @@
 	  tmuxPlugins.sessionist
 	  tmuxPlugins.resurrect
 	  tmuxPlugins.pain-control
+	  tmuxPlugins.gruvbox
 	];
 	extraConfig = ''
           setw -g mode-keys vi
