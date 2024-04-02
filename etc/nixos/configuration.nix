@@ -16,7 +16,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-64eebff0-b9bb-4833-a70c-696d7625edbf".device = "/dev/disk/by-uuid/64eebff0-b9bb-4833-a70c-696d7625edbf";
+  # boot.initrd.luks.devices."luks-64eebff0-b9bb-4833-a70c-696d7625edbf".device = "/dev/disk/by-uuid/64eebff0-b9bb-4833-a70c-696d7625edbf";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -205,6 +205,14 @@
 	  plugin = nvim-tree-lua;
 	  type = "lua";
 	  config = ''
+	    -- disable netrw at the very start of your init.lua
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+
+            -- optionally enable 24-bit colour
+            -- vim.opt.termguicolors = true
+
+            -- empty setup using defaults
 	    require('nvim-tree').setup()
             vim.api.nvim_set_keymap('n', '<leader>\\', [[<cmd>NvimTreeToggle<CR>]], { })
 	    vim.api.nvim_set_keymap('n', '<leader>\\\\', [[<cmd>NvimTreeFindFile<CR>]], { })
@@ -219,6 +227,12 @@
       ];
       extraConfig = ''
         colorscheme PaperColor
+
+        " Highlight on yank
+        augroup YankHighlight
+        autocmd!
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+        augroup end
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
