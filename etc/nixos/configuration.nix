@@ -231,6 +231,13 @@
 
 	plenary-nvim
 	telescope-nvim
+	{
+	  plugin = fzf-lua;
+	  type = "lua";
+	  config = ''
+	    vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+	  '';
+	}
       ];
       extraConfig = ''
         colorscheme PaperColor
