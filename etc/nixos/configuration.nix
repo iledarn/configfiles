@@ -139,6 +139,7 @@
       teams-for-linux
       dconf2nix
       dropbox
+      ripgrep
     ];
     programs.bash.enable = true;
 
@@ -155,6 +156,8 @@
 	  tmuxPlugins.resurrect
 	  tmuxPlugins.pain-control
 	  tmuxPlugins.gruvbox
+	  tmuxPlugins.tmux-fzf
+	  tmuxPlugins.fzf-tmux-url
 	];
 	extraConfig = ''
           setw -g mode-keys vi
@@ -187,6 +190,7 @@
       defaultEditor = true;
       plugins = with pkgs.vimPlugins; [
         fugitive
+	vim-rhubarb
         {
 	  plugin = oil-nvim;
 	  type = "lua";
@@ -195,7 +199,6 @@
 	  '';
 	}
 	nvim-treesitter.withAllGrammars
-	plenary-nvim
 	gruvbox-material
 	vim-code-dark
 	papercolor-theme
@@ -224,6 +227,9 @@
 	vim-dadbod
 	vim-dadbod-ui
 	vim-dadbod-completion
+
+	plenary-nvim
+	telescope-nvim
       ];
       extraConfig = ''
         colorscheme PaperColor
