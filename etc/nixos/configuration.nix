@@ -128,7 +128,7 @@
       microsoft-edge
       enlightenment.terminology
       foot
-#      xsel
+      xsel
       wl-clipboard
       docker-compose
       gnupg
