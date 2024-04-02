@@ -191,6 +191,7 @@
       plugins = with pkgs.vimPlugins; [
         fugitive
 	vim-rhubarb
+	vimagit
         {
 	  plugin = oil-nvim;
 	  type = "lua";
