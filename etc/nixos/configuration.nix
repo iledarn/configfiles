@@ -263,6 +263,14 @@
 	  '';
 	}
 
+	{
+	  plugin = gitsigns-nvim;
+	  type = "lua";
+	  config = ''
+	    require('gitsigns').setup()
+	  '';
+	}
+
       ];
       extraConfig = ''
         colorscheme PaperColor
