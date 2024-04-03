@@ -238,6 +238,14 @@
 	    vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
 	  '';
 	}
+	
+	{
+	  plugin = nvim-surround;
+	  type = "lua";
+	  config = ''
+	    require('nvim-surround').setup()
+	  '';
+	}
       ];
       extraConfig = ''
         colorscheme PaperColor
