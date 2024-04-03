@@ -255,6 +255,14 @@
 	  '';
 	}
 
+	{
+	  plugin = indent-blankline-nvim;
+	  type = "lua";
+	  config = ''
+	    require('ibl').setup()
+	  '';
+	}
+
       ];
       extraConfig = ''
         colorscheme PaperColor
