@@ -200,6 +200,8 @@
 	  '';
 	}
 	nvim-treesitter.withAllGrammars
+        nvim-treesitter-textobjects
+
 	gruvbox-material
 	vim-code-dark
 	papercolor-theme
