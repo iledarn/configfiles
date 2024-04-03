@@ -246,6 +246,15 @@
 	    require('nvim-surround').setup()
 	  '';
 	}
+
+	{
+	  plugin = lualine-nvim;
+	  type = "lua";
+	  config = ''
+	    require('lualine').setup()
+	  '';
+	}
+
       ];
       extraConfig = ''
         colorscheme PaperColor
