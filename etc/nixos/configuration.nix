@@ -140,6 +140,7 @@
       dconf2nix
       dropbox
       ripgrep
+      gimp
     ];
     programs.bash.enable = true;
 
