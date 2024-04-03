@@ -265,13 +265,7 @@
 	  '';
 	}
 
-	{
-	  plugin = gitsigns-nvim;
-	  type = "lua";
-	  config = ''
-	    require('gitsigns').setup()
-	  '';
-	}
+        vim-signify
 
       ];
       extraConfig = ''
