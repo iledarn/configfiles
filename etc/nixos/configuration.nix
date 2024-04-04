@@ -270,6 +270,7 @@
 	  type = "lua";
 	  config = ''
 	    require('lualine').setup({
+	      extensions = { "fugitive", "fzf", "quickfix" },
 	      options = {
 	        icons_enabled = true,
 		theme = 'auto',
@@ -318,6 +319,11 @@
         augroup end
         au FileType python setlocal equalprg=black\ -\ 2>/dev/null
 
+        nmap <leader><Tab> :b#<cr>
+        nmap <leader>w :w<cr>
+        nmap <leader>fs :w<cr>
+        set clipboard+=unnamedplus
+        set clipboard^=unnamed,unnamedplus
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
