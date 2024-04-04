@@ -239,6 +239,7 @@
 	  type = "lua";
 	  config = ''
 	    vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+	    vim.keymap.set("n", "<leader>ft", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
 	  '';
 	}
 	
@@ -267,6 +268,24 @@
 	}
 
         vim-signify
+
+	{
+	  plugin = aerial-nvim;
+	  type = "lua";
+	  config = ''
+
+            require("aerial").setup({
+                on_attach = function(bufnr)
+                    -- Toggle the aerial window with <leader>a
+                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
+                    -- Jump forwards/backwards with '{' and '}'
+                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+                end
+            })
+
+	  '';
+	}
 
       ];
       extraConfig = ''
