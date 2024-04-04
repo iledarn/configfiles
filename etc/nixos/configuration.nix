@@ -254,6 +254,7 @@
 	    vim.keymap.set("n", "<leader>jj", "<cmd>lua require('fzf-lua').jumps()<CR>", { silent = true })
 	    vim.keymap.set("n", "<leader>rr", "<cmd>lua require('fzf-lua').registers()<CR>", { silent = true })
 	    vim.keymap.set("n", "<leader>cc", "<cmd>lua require('fzf-lua').changes()<CR>", { silent = true })
+	    vim.keymap.set("n", "<leader>bb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
 	  '';
 	}
 	
@@ -317,11 +318,9 @@
         autocmd!
         autocmd TextYankPost * silent! lua vim.highlight.on_yank()
         augroup end
+
         au FileType python setlocal equalprg=black\ -\ 2>/dev/null
 
-        nmap <leader><Tab> :b#<cr>
-        nmap <leader>w :w<cr>
-        nmap <leader>fs :w<cr>
         set clipboard+=unnamedplus
         set clipboard^=unnamed,unnamedplus
       '';
@@ -329,6 +328,10 @@
 	--Remap space as leader key
         vim.g.mapleader = ' '
         vim.g.maplocalleader = ','
+
+        vim.keymap.set("n", "<leader>w", ":w<cr>")
+        vim.keymap.set("n", "<leader>fs", ":w<cr>")
+        vim.keymap.set("n", "<leader><Tab>", ":b<cr>")
       '';
     };
 
