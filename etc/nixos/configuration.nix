@@ -141,6 +141,8 @@
       dropbox
       ripgrep
       gimp
+      gparted
+      ntfs3g
     ];
     programs.bash.enable = true;
 
@@ -296,6 +298,8 @@
         autocmd!
         autocmd TextYankPost * silent! lua vim.highlight.on_yank()
         augroup end
+        au FileType python setlocal equalprg=black\ -\ 2>/dev/null
+
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
