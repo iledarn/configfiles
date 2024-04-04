@@ -139,8 +139,12 @@
       teams-for-linux
       dconf2nix
       dropbox
+
       ripgrep
+      fd
+
       gimp
+
       gparted
       ntfs3g
     ];
