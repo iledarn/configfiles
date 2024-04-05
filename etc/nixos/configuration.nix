@@ -329,9 +329,9 @@
         vim.g.mapleader = ' '
         vim.g.maplocalleader = ','
 
-        vim.keymap.set("n", "<leader>w", ":w<cr>")
-        vim.keymap.set("n", "<leader>fs", ":w<cr>")
-        vim.keymap.set("n", "<leader><Tab>", ":b<cr>")
+        vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+        vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>")
+        vim.keymap.set("n", "<leader><Tab>", "<cmd>b#<cr>")
       '';
     };
 
