@@ -353,6 +353,8 @@
 
         set clipboard+=unnamedplus
         set clipboard^=unnamed,unnamedplus
+
+        let g:db_ui_use_nerd_fonts = 1
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
