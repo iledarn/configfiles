@@ -255,6 +255,39 @@
 	    vim.keymap.set("n", "<leader>rr", "<cmd>lua require('fzf-lua').registers()<CR>", { silent = true })
 	    vim.keymap.set("n", "<leader>cc", "<cmd>lua require('fzf-lua').changes()<CR>", { silent = true })
 	    vim.keymap.set("n", "<leader>bb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+
+	    local actions = require "fzf-lua.actions"
+
+	    require'fzf-lua'.setup{
+	      actions = {
+                -- These override the default tables completely
+                -- no need to set to `false` to disable an action
+                -- delete or modify is sufficient
+
+                files = {
+
+                  -- providers that inherit these actions:
+                  --   files, git_files, git_status, grep, lsp
+                  --   oldfiles, quickfix, loclist, tags, btags
+                  --   args
+                  -- default action opens a single selection
+                  -- or sends multiple selection to quickfix
+                  -- replace the default action with the below
+                  -- to open all files whether single or multiple
+                  -- ["default"]     = actions.file_edit,
+
+                  ["default"]     = actions.file_edit_or_qf,
+                  ["ctrl-s"]      = actions.file_split,
+                  ["ctrl-v"]      = actions.file_vsplit,
+                  ["ctrl-t"]      = actions.file_tabedit,
+                  ["alt-q"]       = actions.file_sel_to_qf,
+                  ["alt-l"]       = actions.file_sel_to_ll,
+                  ["ctrl-g"]      = actions.toggle_ignore,
+
+                },
+              },
+	    }
+
 	  '';
 	}
 	
