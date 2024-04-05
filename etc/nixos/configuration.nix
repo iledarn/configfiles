@@ -304,6 +304,14 @@
 	}
 
 	{
+	  plugin = comment-nvim;
+	  type = "lua";
+	  config = ''
+	    require('Comment').setup()
+	  '';
+	}
+
+	{
 	  plugin = indent-blankline-nvim;
 	  type = "lua";
 	  config = ''
