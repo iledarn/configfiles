@@ -355,6 +355,10 @@
         set clipboard^=unnamed,unnamedplus
 
         let g:db_ui_use_nerd_fonts = 1
+
+	" --Zooming Vim Window Splits like a Pro
+	noremap Zz <c-w>_ \| <c-w>\|
+	noremap Zo <c-w>=
       '';
       extraLuaConfig = ''
 	--Remap space as leader key
