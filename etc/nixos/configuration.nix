@@ -245,8 +245,9 @@
           config = ''
             vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>tt", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>lgb", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>lg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>lg", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>lG", "<cmd>lua require('fzf-lua').fzf_live('rg --no-ignore-vcs --column --line-number --no-heading --color=always --smart-case')<CR>", { silent = true })
+            -- vim.keymap.set("n", "<leader>lg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gl", "<cmd>lua require('fzf-lua').grep_last()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gp", "<cmd>lua require('fzf-lua').grep_project()<CR>", { silent = true })
