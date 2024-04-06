@@ -266,7 +266,7 @@ with lib.hm.gvariant;
     "org/gnome/shell" = {
       command-history = [ "lg" ];
       disable-user-extensions = false;
-      enabled-extensions = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" ];
+      enabled-extensions = [ "workspace-indicator@gnome-shell-extensions.gcampax.github.com" "appindicatorsupport@rgcjonas.gmail.com" "apps-menu@gnome-shell-extensions.gcampax.github.com" ];
       last-selected-power-profile = "power-saver";
       remember-mount-password = false;
       welcome-dialog-last-shown-version = "45.3";
