@@ -147,6 +147,7 @@
       gparted
       ntfs3g
       nixpkgs-fmt
+      bat
     ];
     programs.bash.enable = true;
 
@@ -357,10 +358,10 @@
         augroup end
         au FileType python setlocal equalprg=black\ -\ 2>/dev/null
         au FileType nix setlocal equalprg=nixpkgs-fmt
-        "set clipboard+=unnamedplus
-        "set clipboard^=unnamed,unnamedplus
+        " set clipboard+=unnamedplus
+        " set clipboard^=unnamed,unnamedplus
         let g:db_ui_use_nerd_fonts = 1
-        --Zooming Vim Window Splits like a Pro
+        " Zooming Vim Window Splits like a Pro
         noremap Zz <c-w>_ \| <c-w>\|
         noremap Zo <c-w>=
       '';
