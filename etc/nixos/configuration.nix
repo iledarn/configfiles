@@ -246,8 +246,11 @@
           config = ''
             vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>tt", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>g", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>lg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gl", "<cmd>lua require('fzf-lua').grep_last()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gp", "<cmd>lua require('fzf-lua').grep_project()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gC", "<cmd>lua require('fzf-lua').grep_cword()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gc", "<cmd>lua require('fzf-lua').grep_cWORD()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", { silent = true })
@@ -282,7 +285,7 @@
                   ["ctrl-t"]      = actions.file_tabedit,
                   ["alt-q"]       = actions.file_sel_to_qf,
                   ["alt-l"]       = actions.file_sel_to_ll,
-                  ["ctrl-g"]      = actions.toggle_ignore,
+                  ["ctrl-i"]      = actions.toggle_ignore,
                 },
                },
             }
