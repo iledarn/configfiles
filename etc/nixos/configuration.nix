@@ -17,7 +17,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # boot.initrd.luks.devices."luks-64eebff0-b9bb-4833-a70c-696d7625edbf".device = "/dev/disk/by-uuid/64eebff0-b9bb-4833-a70c-696d7625edbf";
+  boot.initrd.luks.devices."luks-64eebff0-b9bb-4833-a70c-696d7625edbf".device = "/dev/disk/by-uuid/64eebff0-b9bb-4833-a70c-696d7625edbf";
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -244,51 +244,49 @@
           plugin = fzf-lua;
           type = "lua";
           config = ''
-            	    vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>tt", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>gl", "<cmd>lua require('fzf-lua').grep_last()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>gC", "<cmd>lua require('fzf-lua').grep_cword()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>gc", "<cmd>lua require('fzf-lua').grep_cWORD()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>jj", "<cmd>lua require('fzf-lua').jumps()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>rr", "<cmd>lua require('fzf-lua').registers()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>cc", "<cmd>lua require('fzf-lua').changes()<CR>", { silent = true })
-            	    vim.keymap.set("n", "<leader>bb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>tt", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gl", "<cmd>lua require('fzf-lua').grep_last()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gC", "<cmd>lua require('fzf-lua').grep_cword()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gc", "<cmd>lua require('fzf-lua').grep_cWORD()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').lgrep_curbuf()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>jj", "<cmd>lua require('fzf-lua').jumps()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>rr", "<cmd>lua require('fzf-lua').registers()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>cc", "<cmd>lua require('fzf-lua').changes()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>bb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true })
 
-            	    local actions = require "fzf-lua.actions"
+            local actions = require "fzf-lua.actions"
 
-            	    require'fzf-lua'.setup{
-            	      actions = {
-                            -- These override the default tables completely
-                            -- no need to set to `false` to disable an action
-                            -- delete or modify is sufficient
+            require'fzf-lua'.setup{
+              actions = {
+                -- These override the default tables completely
+                -- no need to set to `false` to disable an action
+                -- delete or modify is sufficient
 
-                            files = {
+                files = {
 
-                              -- providers that inherit these actions:
-                              --   files, git_files, git_status, grep, lsp
-                              --   oldfiles, quickfix, loclist, tags, btags
-                              --   args
-                              -- default action opens a single selection
-                              -- or sends multiple selection to quickfix
-                              -- replace the default action with the below
-                              -- to open all files whether single or multiple
-                              -- ["default"]     = actions.file_edit,
+                  -- providers that inherit these actions:
+                  --   files, git_files, git_status, grep, lsp
+                  --   oldfiles, quickfix, loclist, tags, btags
+                  --   args
+                  -- default action opens a single selection
+                  -- or sends multiple selection to quickfix
+                  -- replace the default action with the below
+                  -- to open all files whether single or multiple
+                  -- ["default"]     = actions.file_edit,
 
-                              ["default"]     = actions.file_edit_or_qf,
-                              ["ctrl-s"]      = actions.file_split,
-                              ["ctrl-v"]      = actions.file_vsplit,
-                              ["ctrl-t"]      = actions.file_tabedit,
-                              ["alt-q"]       = actions.file_sel_to_qf,
-                              ["alt-l"]       = actions.file_sel_to_ll,
-                              ["ctrl-g"]      = actions.toggle_ignore,
-
-                            },
-                          },
-            	    }
-
-            	  '';
+                  ["default"]     = actions.file_edit_or_qf,
+                  ["ctrl-s"]      = actions.file_split,
+                  ["ctrl-v"]      = actions.file_vsplit,
+                  ["ctrl-t"]      = actions.file_tabedit,
+                  ["alt-q"]       = actions.file_sel_to_qf,
+                  ["alt-l"]       = actions.file_sel_to_ll,
+                  ["ctrl-g"]      = actions.toggle_ignore,
+                },
+               },
+            }
+          '';
         }
 
         {
