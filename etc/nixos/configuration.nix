@@ -268,6 +268,45 @@
                   ["ctrl-i"] = { actions.toggle_ignore },
                 },
               },
+              grep = {
+                toggle_ignore_flag = "--no-ignore-vcs",
+                prompt = 'Rg❯ ',
+                input_prompt = 'Grep For❯ ',
+                multiprocess = true,  -- run command in a separate process
+                git_icons = true,  -- show git icons?
+                file_icons = true,  -- show file icons?
+                color_icons = true,           -- colorize file|git icons
+                -- executed command priority is 'cmd' (if exists)
+                -- otherwise auto-detect prioritizes `rg` over `grep`
+                -- default options are controlled by 'rg|grep_opts'
+                -- cmd = "rg --vimgrep",
+                grep_opts = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e",
+                rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+                -- set to 'true' to always parse globs in both 'grep' and 'live_grep'
+                -- search strings will be split using the 'glob_separator' and translated
+                -- to '--iglob=' arguments, requires 'rg'
+                -- can still be used when 'false' by calling 'live_grep_glob' directly
+                rg_glob = false,  -- default to glob parsing?
+                glob_flag = "--iglob",  -- for case sensitive globs use '--glob'
+                glob_separator = "%s%-%-",  -- query separator pattern (lua): ' --'
+                -- advanced usage: for custom argument parsing define
+                -- 'rg_glob_fn' to return a pair:
+                --   first returned argument is the new search query
+                --   second returned argument are additional rg flags
+                -- rg_glob_fn = function(query, opts)
+                --   ...
+                --   return new_query, flags
+                -- end,
+                actions = {
+                  -- actions inherit from 'actions.files' and merge
+                  -- this action toggles between 'grep' and 'live_grep'
+                  ["ctrl-g"] = { actions.grep_lgrep },
+                  -- uncomment to enable '.gitignore' toggle for grep
+                  ["ctrl-r"] = { actions.toggle_ignore }
+                },
+                no_header = false,  -- hide grep|cwd header?
+                no_header_i = false,  -- hide interactive header?
+              },
             }
           '';
         }
