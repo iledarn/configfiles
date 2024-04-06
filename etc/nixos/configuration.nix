@@ -167,13 +167,13 @@
           tmuxPlugins.fzf-tmux-url
         ];
       extraConfig = ''
-                  setw -g mode-keys vi
-                  unbind C-b
-                  set -g prefix C-a
-                  bind C-a send-prefix
-                  bind-key C-a last-window
-        	  set-option -sa terminal-features ',foot:RGB'
-        	'';
+        setw -g mode-keys vi
+        unbind C-b
+        set -g prefix C-a
+        bind C-a send-prefix
+        bind-key C-a last-window
+        set-option -sa terminal-features ',foot:RGB'
+      '';
     };
 
     services.emacs.enable = true;
@@ -203,8 +203,8 @@
           plugin = oil-nvim;
           type = "lua";
           config = ''
-            	    require('oil').setup()
-            	  '';
+            require('oil').setup()
+          '';
         }
         nvim-treesitter.withAllGrammars
         nvim-treesitter-textobjects
@@ -218,18 +218,16 @@
           plugin = nvim-tree-lua;
           type = "lua";
           config = ''
-            	    -- disable netrw at the very start of your init.lua
-                        vim.g.loaded_netrw = 1
-                        vim.g.loaded_netrwPlugin = 1
-
-                        -- optionally enable 24-bit colour
-                        -- vim.opt.termguicolors = true
-
-                        -- empty setup using defaults
-            	    require('nvim-tree').setup()
-                        vim.api.nvim_set_keymap('n', '<leader>\\', [[<cmd>NvimTreeToggle<CR>]], { })
-            	    vim.api.nvim_set_keymap('n', '<leader>\\\\', [[<cmd>NvimTreeFindFile<CR>]], { })
-            	  '';
+            -- disable netrw at the very start of your init.lua
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+            -- optionally enable 24-bit colour
+            -- vim.opt.termguicolors = true
+            -- empty setup using defaults
+            require('nvim-tree').setup()
+            vim.api.nvim_set_keymap('n', '<leader>\\', [[<cmd>NvimTreeToggle<CR>]], { })
+            vim.api.nvim_set_keymap('n', '<leader>\\\\', [[<cmd>NvimTreeFindFile<CR>]], { })
+          '';
         }
         vim-tmux-navigator
         vim-tmux-clipboard
@@ -262,12 +260,12 @@
             local actions = require "fzf-lua.actions"
 
             require'fzf-lua'.setup{
-	      files = {
-	        toggle_ignore_flag = "--no-ignore-vcs",
-		actions = {
-		  ["ctrl-i"] = { actions.toggle_ignore },
-		},
-	      },
+              files = {
+                toggle_ignore_flag = "--no-ignore-vcs",
+                actions = {
+                  ["ctrl-i"] = { actions.toggle_ignore },
+                },
+              },
             }
           '';
         }
@@ -276,61 +274,61 @@
           plugin = nvim-surround;
           type = "lua";
           config = ''
-            	    require('nvim-surround').setup()
-            	  '';
+            require('nvim-surround').setup()
+          '';
         }
 
         {
           plugin = lualine-nvim;
           type = "lua";
           config = ''
-            	    require('lualine').setup({
-            	      extensions = { "fugitive", "fzf", "quickfix" },
-            	      options = {
-            	        icons_enabled = true,
-            		theme = 'auto',
-            	      },
-            	      tabline = {},
-            	    })
-            	  '';
+            require('lualine').setup({
+              extensions = { "fugitive", "fzf", "quickfix" },
+              options = {
+                icons_enabled = true,
+                theme = 'auto',
+              },
+              tabline = {},
+            })
+          '';
         }
 
         {
           plugin = bufferline-nvim;
           type = "lua";
           config = ''
-            	    require('bufferline').setup({
-            	      options = {
-            	        mode = "tabs",
-            		numbers = "ordinal",
-            	      },
-            	    })
-            	    vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>")
-            	    vim.keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>")
-            	    vim.keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>")
-            	    vim.keymap.set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>")
-            	    vim.keymap.set("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>")
-            	    vim.keymap.set("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>")
-            	    vim.keymap.set("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>")
-            	    vim.keymap.set("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>")
-            	    vim.keymap.set("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<CR>")
-            	  '';
+            require('bufferline').setup({
+              options = {
+                mode = "tabs",
+                numbers = "ordinal",
+              },
+            })
+            vim.keymap.set("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>")
+            vim.keymap.set("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>")
+            vim.keymap.set("n", "<leader>3", "<cmd>BufferLineGoToBuffer 3<CR>")
+            vim.keymap.set("n", "<leader>4", "<cmd>BufferLineGoToBuffer 4<CR>")
+            vim.keymap.set("n", "<leader>5", "<cmd>BufferLineGoToBuffer 5<CR>")
+            vim.keymap.set("n", "<leader>6", "<cmd>BufferLineGoToBuffer 6<CR>")
+            vim.keymap.set("n", "<leader>7", "<cmd>BufferLineGoToBuffer 7<CR>")
+            vim.keymap.set("n", "<leader>8", "<cmd>BufferLineGoToBuffer 8<CR>")
+            vim.keymap.set("n", "<leader>9", "<cmd>BufferLineGoToBuffer 9<CR>")
+          '';
         }
 
         {
           plugin = comment-nvim;
           type = "lua";
           config = ''
-            	    require('Comment').setup()
-            	  '';
+            require('Comment').setup()
+          '';
         }
 
         {
           plugin = indent-blankline-nvim;
           type = "lua";
           config = ''
-            	    require('ibl').setup()
-            	  '';
+            require('ibl').setup()
+          '';
         }
 
         vim-signify
@@ -339,45 +337,40 @@
           plugin = aerial-nvim;
           type = "lua";
           config = ''
-
             require("aerial").setup({
-                on_attach = function(bufnr)
-                    -- Toggle the aerial window with <leader>a
-                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
-                    -- Jump forwards/backwards with '{' and '}'
-                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
-                    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-                end
+              on_attach = function(bufnr)
+                vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+                vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+              end,
             })
-
-	  '';
+            vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+          '';
         }
 
       ];
       extraConfig = ''
-                colorscheme PaperColor
-                " Highlight on yank
-                augroup YankHighlight
-                autocmd!
-                autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-                augroup end
-                au FileType python setlocal equalprg=black\ -\ 2>/dev/null
-                au FileType nix setlocal equalprg=nixpkgs-fmt
-                "set clipboard+=unnamedplus
-                "set clipboard^=unnamed,unnamedplus
-                let g:db_ui_use_nerd_fonts = 1
-        	" --Zooming Vim Window Splits like a Pro
-        	noremap Zz <c-w>_ \| <c-w>\|
-        	noremap Zo <c-w>=
+        colorscheme PaperColor
+        " Highlight on yank
+        augroup YankHighlight
+        autocmd!
+        autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+        augroup end
+        au FileType python setlocal equalprg=black\ -\ 2>/dev/null
+        au FileType nix setlocal equalprg=nixpkgs-fmt
+        "set clipboard+=unnamedplus
+        "set clipboard^=unnamed,unnamedplus
+        let g:db_ui_use_nerd_fonts = 1
+        --Zooming Vim Window Splits like a Pro
+        noremap Zz <c-w>_ \| <c-w>\|
+        noremap Zo <c-w>=
       '';
       extraLuaConfig = ''
-        	--Remap space as leader key
-                vim.g.mapleader = ' '
-                vim.g.maplocalleader = ','
-
-                vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
-                vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>")
-                vim.keymap.set("n", "<leader><Tab>", "<cmd>b#<cr>")
+        --Remap space as leader key
+        vim.g.mapleader = ' '
+        vim.g.maplocalleader = ','
+        vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+        vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>")
+        vim.keymap.set("n", "<leader><Tab>", "<cmd>b#<cr>")
       '';
     };
 
