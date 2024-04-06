@@ -375,20 +375,16 @@
       ];
       extraConfig = ''
                 colorscheme PaperColor
-
                 " Highlight on yank
                 augroup YankHighlight
                 autocmd!
                 autocmd TextYankPost * silent! lua vim.highlight.on_yank()
                 augroup end
-
                 au FileType python setlocal equalprg=black\ -\ 2>/dev/null
-
+                au FileType nix setlocal equalprg=nixpkgs-fmt
                 "set clipboard+=unnamedplus
                 "set clipboard^=unnamed,unnamedplus
-
                 let g:db_ui_use_nerd_fonts = 1
-
         	" --Zooming Vim Window Splits like a Pro
         	noremap Zz <c-w>_ \| <c-w>\|
         	noremap Zo <c-w>=
