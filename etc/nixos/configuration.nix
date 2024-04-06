@@ -245,7 +245,7 @@
           config = ''
             vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>tt", "<cmd>lua require('fzf-lua').tabs()<CR>", { silent = true })
-            vim.keymap.set("n", "<leader>g", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
+            vim.keymap.set("n", "<leader>gb", "<cmd>lua require('fzf-lua').live_grep_glob()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gg", "<cmd>lua require('fzf-lua').grep()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>lg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true })
             vim.keymap.set("n", "<leader>gl", "<cmd>lua require('fzf-lua').grep_last()<CR>", { silent = true })
