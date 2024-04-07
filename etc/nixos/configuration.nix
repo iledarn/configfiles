@@ -122,7 +122,6 @@
       emacs
       git
       keepassxc
-      maestral
       surfraw
       jq
       fzf
