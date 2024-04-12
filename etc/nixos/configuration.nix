@@ -112,6 +112,7 @@
 
     home.packages = with pkgs; [
       atool
+      inetutils
       httpie
       tmux
       telegram-desktop
@@ -126,7 +127,7 @@
       jq
       fzf
       nerdfonts
-      # microsoft-edge
+      microsoft-edge
       enlightenment.terminology
       foot
       xsel
@@ -147,6 +148,7 @@
       ntfs3g
       nixpkgs-fmt
       bat
+      tcpdump
     ];
     programs.bash.enable = true;
 
@@ -204,6 +206,7 @@
           type = "lua";
           config = ''
             require('oil').setup()
+            vim.keymap.set("n", "<leader>o", require("oil").open, { desc = "Open parent directory" })
           '';
         }
         nvim-treesitter.withAllGrammars
