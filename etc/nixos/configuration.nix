@@ -157,6 +157,7 @@
       nixpkgs-fmt
       bat
       tcpdump
+      ngrok
     ];
     programs.bash.enable = true;
 
