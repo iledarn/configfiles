@@ -162,7 +162,7 @@ with lib.hm.gvariant;
       switch-to-workspace-5 = [ "<Shift><Alt>5" "<Shift><Alt>t" ];
       switch-to-workspace-6 = [ "<Shift><Alt>6" "<Shift><Alt>y" ];
       switch-to-workspace-7 = [ "<Shift><Alt>7" ];
-      switch-to-workspace-8 = [ "<Shift><Alt>8" ];
+      switch-to-workspace-8 = [ "<Shift><Alt>8" "<Shift><Alt>v" ];
       switch-to-workspace-9 = [ "<Shift><Alt>9" "<Shift><Alt>k" ];
     };
 
