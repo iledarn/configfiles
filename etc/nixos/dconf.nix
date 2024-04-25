@@ -156,9 +156,9 @@ with lib.hm.gvariant;
       move-to-workspace-8 = [ "<Ctrl><Alt>8" ];
       move-to-workspace-9 = [ "<Ctrl><Alt>9" ];
       switch-to-workspace-1 = [ "<Shift><Alt>1" "<Shift><Alt>x" ];
-      switch-to-workspace-2 = [ "<Shift><Alt>2" ];
+      switch-to-workspace-2 = [ "<Shift><Alt>2" "<Shift><Alt>d" ];
       switch-to-workspace-3 = [ "<Shift><Alt>3" "<Shift><Alt>f" ];
-      switch-to-workspace-4 = [ "<Shift><Alt>4" ];
+      switch-to-workspace-4 = [ "<Shift><Alt>4" "<Shift><Alt>e" ];
       switch-to-workspace-5 = [ "<Shift><Alt>5" "<Shift><Alt>t" ];
       switch-to-workspace-6 = [ "<Shift><Alt>6" "<Shift><Alt>y" ];
       switch-to-workspace-7 = [ "<Shift><Alt>7" ];
@@ -232,7 +232,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/" ];
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
@@ -242,21 +242,9 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Shift><Alt>d";
-      command = "bash /home/ildar/configfiles/launchtool.sh brave";
-      name = "brave";
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
       binding = "<Shift><Alt>w";
       command = "emacsclient -cF \"((visibility . nil))\" -e \"(emacs-counsel-launcher)\"";
       name = "emacs-run-launcher";
-    };
-
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      binding = "<Shift><Alt>e";
-      command = "bash /home/ildar/configfiles/launchtool.sh microsoft-edge";
-      name = "microsoft-edge";
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
