@@ -87,6 +87,13 @@
 
   virtualisation.docker.enable = true;
 
+  # Garbage collection can be automated
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ildar = {
     isNormalUser = true;
