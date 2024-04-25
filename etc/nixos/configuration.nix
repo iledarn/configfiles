@@ -158,6 +158,7 @@
       bat
       tcpdump
       ngrok
+      openvpn
     ];
     programs.bash.enable = true;
 
