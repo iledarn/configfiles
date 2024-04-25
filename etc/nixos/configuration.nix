@@ -161,6 +161,14 @@
     ];
     programs.bash.enable = true;
 
+    programs.vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+        vscodevim.vim
+      ];
+    };
+
     programs.tmux = {
       enable = true;
       terminal = "tmux-256color";
@@ -248,6 +256,8 @@
     gnomeExtensions.appindicator
     wget
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
