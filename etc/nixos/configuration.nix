@@ -161,6 +161,7 @@
       openvpn
     ];
     programs.bash.enable = true;
+    programs.fzf.enable = true;
     programs.starship.enable = true;
     programs.direnv = {
       enable = true;
