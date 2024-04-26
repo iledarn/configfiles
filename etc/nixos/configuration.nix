@@ -162,15 +162,19 @@
     ];
     programs.bash.enable = true;
     programs.starship.enable = true;
-    programs.direnv.enable = true;
+    programs.direnv = {
+      enable = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
 
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         dracula-theme.theme-dracula
         vscodevim.vim
-	yzhang.markdown-all-in-one
-	mkhl.direnv
+        yzhang.markdown-all-in-one
+        mkhl.direnv
       ];
     };
 
