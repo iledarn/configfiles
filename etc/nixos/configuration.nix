@@ -176,6 +176,7 @@
         vscodevim.vim
         yzhang.markdown-all-in-one
         mkhl.direnv
+        ms-python.python
       ];
     };
 
