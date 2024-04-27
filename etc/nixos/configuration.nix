@@ -172,11 +172,38 @@
     programs.vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
+        brettm12345.nixfmt-vscode
+        mkhl.direnv
         dracula-theme.theme-dracula
         vscodevim.vim
         yzhang.markdown-all-in-one
-        mkhl.direnv
-        ms-python.python
+        bbenoist.nix
+        ms-azuretools.vscode-docker
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "vsc-invoke";
+          publisher = "dchanco";
+          version = "0.0.12";
+          sha256 = "sha256-+YpNftJ9qIfZqGQXZAb4+E0V8/aa8zWTjRSphddQw68=";
+        }
+        {
+          name = "tasks";
+          publisher = "actboy168";
+          version = "0.16.0";
+          sha256 = "sha256-btYWdOuxqSBclBHKyICo2yNmTjB7tOpiKNFNASPgihU=";
+        }
+        {
+          name = "aws-toolkit-vscode";
+          publisher = "AmazonWebServices";
+          version = "2.20.0";
+          sha256 = "sha256-65Sspi2DZUcWHWcOvnWWWliX/sSozWiSg9ptXdbFNV8=";
+        }
+        {
+          name = "prettier-vscode";
+          publisher = "esbenp";
+          version = "10.4.0";
+          sha256 = "sha256-8+90cZpqyH+wBgPFaX5GaU6E02yBWUoB+T9C2z2Ix8c=";
+        }
       ];
     };
 
