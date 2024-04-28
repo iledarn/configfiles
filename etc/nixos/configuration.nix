@@ -179,6 +179,9 @@
         yzhang.markdown-all-in-one
         bbenoist.nix
         ms-azuretools.vscode-docker
+	ms-python.black-formatter
+	ms-python.python
+	ms-python.isort
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "vsc-invoke";
