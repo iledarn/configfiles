@@ -5,6 +5,8 @@
     enable = true;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
+      lush-nvim
+      zenbones-nvim
       fugitive
       vim-rhubarb
       vimagit
@@ -160,7 +162,10 @@
 
     ];
     extraConfig = ''
-      colorscheme PaperColor
+      " colorscheme PaperColor
+      set termguicolors
+      set background=light " or dark
+      colorscheme zenbones
       " Highlight on yank
       augroup YankHighlight
       autocmd!
