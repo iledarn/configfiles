@@ -19,6 +19,14 @@
 
   boot.initrd.luks.devices."luks-64eebff0-b9bb-4833-a70c-696d7625edbf".device = "/dev/disk/by-uuid/64eebff0-b9bb-4833-a70c-696d7625edbf";
   networking.hostName = "nixos"; # Define your hostname.
+  networking.extraHosts = ''
+    127.0.0.1 doodba12
+    127.0.0.1 doodba13
+    127.0.0.1 doodba14
+    127.0.0.1 doodba15
+    127.0.0.1 doodba16
+    127.0.0.1 doodba17
+  '';
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -160,7 +168,12 @@
       ngrok
       openvpn
     ];
-    programs.bash.enable = true;
+    programs.bash = {
+      enable = true;
+      sessionVariables = {
+        EDITOR = "nvim";
+      };
+    };
     programs.fzf.enable = true;
     programs.starship.enable = true;
     programs.direnv = {
@@ -179,9 +192,9 @@
         yzhang.markdown-all-in-one
         bbenoist.nix
         ms-azuretools.vscode-docker
-	ms-python.black-formatter
-	ms-python.python
-	ms-python.isort
+        ms-python.black-formatter
+        ms-python.python
+        ms-python.isort
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "vsc-invoke";
@@ -298,7 +311,9 @@
     wget
   ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
