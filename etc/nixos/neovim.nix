@@ -231,7 +231,7 @@ in
           error('error: wincent.sudo.write got result ' .. result .. ' for ' .. description .. '(expected non-' .. rejected .. ')')
         end
       end
-      local write = function(bang)
+      local wincent = function(bang)
         if bang == '!' or password == nil then
           password = vim.fn.inputsecret('Password:')
           if timer ~= nil then
@@ -257,6 +257,7 @@ in
         end
         expect(0, function() return vim.fn.delete(askpass) end, 'delete')
       end
+      vim.cmd('command! -bang W call wincent("<bang>")')
     '';
   };
 }
