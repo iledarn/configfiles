@@ -242,7 +242,7 @@ in
           end, cache_time)
         end
         local askpass = vim.fn.tempname()
-        expect(0, function() return vim.fn.writefile({''}, askpass, 's') end, 'writefile (touch)')
+        expect(0, function() return vim.fn.writefile({""}, askpass, "s") end, "writefile (touch)")
         reject(0, function() return vim.fn.setfperm(askpass, 'rwx------') end, 'setfperm')
         expect(0, function() return vim.fn.writefile({'#!/bin/bash', 'builtin echo -n ' .. vim.fn.shellescape(password)}, askpass, 's') end, 'writefile (fill)')
         pcall(function()
