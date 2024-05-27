@@ -141,6 +141,7 @@
       keepassxc
       surfraw
       jq
+      yq
       fzf
       nerdfonts
       microsoft-edge
@@ -167,6 +168,8 @@
       tcpdump
       ngrok
       openvpn
+      awscli2
+      s3fs
     ];
     programs.bash = {
       enable = true;
