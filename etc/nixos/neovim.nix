@@ -9,6 +9,16 @@ let
       hash = "sha256-1kzyPCfFb/wxzj8smkIZfIk2mdOCDjQKMe/C5mlIfZE=";
     };
   };
+
+  vim-suda = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-suda";
+
+    src = pkgs.fetchgit {
+      url = "https://github.com/lambdalisue/vim-suda.git";
+      rev = "b97fab52f9cdeabe2bbb5eb98d82356899f30829";
+      hash = "sha256-cT1ihAeVCywYrJV96zp9ku/ksvn4LP4bKdR6s6FZkIk=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -30,6 +40,7 @@ in
           })
         '';
       }
+      vim-suda
       lush-nvim
       zenbones-nvim
       fugitive
