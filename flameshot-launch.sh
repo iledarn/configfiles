@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-flameshot gui
+# Use Wayland-friendly clipboard path for flameshot.
+flameshot gui --raw | wl-copy
